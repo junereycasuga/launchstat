@@ -4,7 +4,14 @@ var launchstat = angular.module('launchStatApp');
 
 launchstat.controller('CountdownCtrl', function ($scope, $firebase, firebaseUrl, $routeParams) {
   var data = $firebase(new Firebase(firebaseUrl + $routeParams.id));
+  $('.site-header, .content').hide();
   data.$on('loaded', function(){
+    $('.site-header').addClass('animated fadeInDown');
+    $('.site-header').show();
+    $('.site-header').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $('.content').addClass('animated fadeIn');
+      $('.content').show();
+    });
     $scope.launch = data;
     $.backstretch("../images/bg2.jpg");
     (function($) {
