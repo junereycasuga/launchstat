@@ -1,0 +1,18 @@
+<div id="main" ng-controller="CountdownCtrl">
+  <div class="inner">
+    <header class="site-header">
+    <a href="/"><h1 class="site-title fade-in">LaunchStat</h1></a>
+    </header>
+
+    <section class="content">
+      <h1 class="section-title">{{ launch.title }}</h1>
+
+      <div id="timer" class="hasCountdown">
+        <span class="countdown_row" role="timer_value">
+        </span>
+      </div>
+
+      <p class="subtitle">{{ launch.text }}</p>
+    </section>
+  </div>
+</div>
