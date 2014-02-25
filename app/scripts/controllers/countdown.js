@@ -114,5 +114,3 @@ launchstat.controller('CountdownCtrl', function ($scope, $firebase, firebaseUrl,
     })(jQuery);
   });
 });
-
-

@@ -5,8 +5,19 @@ var launchstat = angular.module('launchStatApp');
 launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
   var launch = {};
 
+  $('.site-header, .content').hide();
+ 
   launch.fb = $firebase(new Firebase(firebaseUrl));
-  $.backstretch("../images/bg3.jpg");
+  launch.fb.$on('loaded', function(){
+    $.backstretch("../images/bg3.jpg");
+    $('.site-header').addClass('animated fadeInDown');
+      
+    $('.site-header').show();
+    $('.site-header').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $('.content').addClass('animated fadeIn');
+      $('.content').show();
+    });
+  });
 
   //add a launch
   launch.addLaunch = function(){
