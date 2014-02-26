@@ -1,29 +1,26 @@
 <div id="main">
-  <div class="inner">
+  <div class="inner container">
     <header class="site-header">
       <a href="/"><h1 class="site-title">LaunchStat</h1></a>
     </header>
     <section class="content">
-      <!-- <div class="modal-toggle">
-        <a href="#" id="modal-open" type="button" role="button" class="btn"><span class="icon icon-plus"></span>Add your own countdown</a>
-      </div> -->
+      <div class="modal-toggle">
+        <a href="#" id="modal-open">Add your own countdown</a>
+      </div>
       <section id="grid" class="grid clearfix">
         <div ng-repeat="(key, value) in launches.fb">
-          <a href="/#/{{ key }}" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+          <a href="/#/{{ key }}" data-path-hover="m 180,130 -180,0 L 0,0 180,0 z">
             <figure>
-              <img src="img/1.png" />
+              <img src="img/2.png" />
               <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
               <figcaption>
-                <h2>{{ value.title }}</h2>
+                <h2 id="{{ value.title }}">{{ value.title }}</h2>
                 <button>View</button>
               </figcaption>
             </figure>
           </a>
         </div>
       </section>
-      <ul ng-repeat="(key, value) in launches.fb">
-        <li><a href="/#/{{ key }}">{{ value.title }}</a></li>
-      </ul>
     </section>
   </div>
 </div>
@@ -39,7 +36,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Title</label>
             <div class="col-sm-9">
-              <input type="text" class="col-sm-12" placeholder="e.g. LaunchStat's Birthday Countdown" ng-model="launches.title" />
+              <input type="text" class="col-sm-12" placeholder="e.g. LaunchStat's Birthday Countdown" ng-model="launches.title" required />
             </div>
           </div>
           <div class="form-group">
@@ -51,13 +48,13 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Launch Date</label>
             <div class="col-sm-9">
-              <input type="text" class="col-sm-12" placeholder="e.g. February 26, 2015 or 9:26pm or 15 minutes" ng-model="launches.date">
+              <input type="text" class="col-sm-12" placeholder="e.g. February 26, 2015 or 9:26pm or 15 minutes" ng-model="launches.date" required>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Text after countdown</label>
             <div class="col-sm-9">
-              <input type="text" class="col-sm-12" placeholder="e.g. Happy Birthday!" ng-model="launches.afterCountdown">
+              <input type="text" class="col-sm-12" placeholder="e.g. Happy Birthday!" ng-model="launches.afterCountdown" required>
             </div>
           </div>
           <div class="form-group">

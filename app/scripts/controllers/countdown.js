@@ -13,7 +13,11 @@ launchstat.controller('CountdownCtrl', function ($scope, $firebase, firebaseUrl,
       $('.content').show();
     });
     $scope.launch = data;
-    $.backstretch("../images/bg2.jpg");
+    if(data.backgroundImage){
+      $.backstretch(data.backgroundImage);
+    } else {
+      $.backstretch("../images/bg2.jpg");
+    }
     (function($) {
       function Countdown(options) {
         this.$timer = $(options.$timer);

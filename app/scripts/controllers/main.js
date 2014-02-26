@@ -6,9 +6,32 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
   var launch = {};
 
   $('.site-header, .content').hide();
+
+ function init() {
+    var speed = 250,
+      easing = mina.easeinout;
+
+    [].slice.call ( document.querySelectorAll( '#grid > div > a' ) ).forEach( function( el ) {
+      var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+        pathConfig = {
+          from : path.attr( 'd' ),
+          to : el.getAttribute( 'data-path-hover' )
+        };
+
+      el.addEventListener( 'mouseenter', function() {
+        path.animate( { 'path' : pathConfig.to }, speed, easing );
+      } );
+
+      el.addEventListener( 'mouseleave', function() {
+        path.animate( { 'path' : pathConfig.from }, speed, easing );
+        $('#grid > div > a > figure > figcaption > h2').css();
+      } );
+    } );
+  }
  
   launch.fb = $firebase(new Firebase(firebaseUrl));
   launch.fb.$on('loaded', function(){
+    init();
     $.backstretch("../images/bg3.jpg");
     $('.site-header').addClass('animated fadeInDown');
       
@@ -21,13 +44,19 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
 
   //add a launch
   launch.addLaunch = function(){
-    launch.fb.$add({
+    var add = launch.fb.$add({
       title: launch.title,
       launchDate: launch.date,
       text: launch.text,
-      afterCountdown: launch.afterCountdown
+      afterCountdown: launch.afterCountdown,
+      backgroundImage: launch.image
     });
 
+    return true;
+
+  }
+
+  if(launch.addLaunch()){
     $(function(){
       var mainInner = $('#main .inner'),
         modal = $('#modal');
