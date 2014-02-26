@@ -191,7 +191,6 @@ body {
 
 a {
 	color: #dadada;
-	text-decoration: underline;
 }
 
 a:active,
@@ -362,7 +361,6 @@ textarea {
 	font-weight: 700;
 	letter-spacing: 1px;
 	padding: 12px;
-	text-transform: uppercase;
 }
 
 input:focus,
