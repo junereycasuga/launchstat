@@ -7,7 +7,7 @@ angular.module('launchStatApp', [
   'ngRoute',
   'firebase',
 ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
