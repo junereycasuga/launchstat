@@ -14,9 +14,9 @@ launchstat.controller('CountdownCtrl', function ($scope, $firebase, firebaseUrl,
     });
     $scope.launch = data;
     if(data.backgroundImage){
-      $.backstretch(data.backgroundImage);
+      $.backstretch(data.backgroundImage, {fade: 'normal'});
     } else {
-      $.backstretch("images/bg2.jpg");
+      $.backstretch("images/bg2.jpg", {fade: 'normal'});
     }
     (function($) {
       function Countdown(options) {
