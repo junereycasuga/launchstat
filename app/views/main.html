@@ -1,33 +1,30 @@
 <div id="main">
   <div class="inner container">
     <header class="site-header">
-      <a href="/"><h1 class="site-title">LaunchStat</h1></a>
+      <a href="#"><h1 class="site-title">LaunchStat</h1></a>
     </header>
     <section class="content">
       <div class="modal-toggle">
         <a href="#" id="modal-open">Add your own countdown</a>
       </div>
-      <section id="grid" class="grid clearfix">
-        <div ng-repeat="(key, value) in launches.fb">
-          <a href="/#/{{ key }}" data-path-hover="m 180,130 -180,0 L 0,0 180,0 z">
-            <figure>
-              <img src="img/2.png" />
-              <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-              <figcaption>
-                <h2 id="{{ value.title }}">{{ value.title }}</h2>
-                <button>View</button>
-              </figcaption>
-            </figure>
-          </a>
+      <div ng-repeat="(key, value) in launches.fb">
+        <div class="view view-tenth">
+          <div class="launch-title">
+            <h4>{{ value.title }}</h4>
+          </div>
+          <img src="images/bg2.jpg">
+          <div class="mask">
+            <a href="#/{{ key }}" class="info">View</a>
+          </div>
         </div>
-      </section>
+      </div>
     </section>
   </div>
 </div>
 
 <div id="modal" ng-controller="MainCtrl">
   <div class="inner">
-    <a href="#" id="modal-close" class="icon icon-cross"><span class="screen-reader-text">Close</span></a>
+    <a href="#" id="modal-close">Close [X]</a>
     <section class="content">
       <h1 class="section-title">Add your LaunchStat Countdown</h1>
 

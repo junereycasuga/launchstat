@@ -1,198 +1,171 @@
-/* Common style */
-.grid {
-	margin: 40px auto 120px;
-	max-width: 1000px;
-	width: 90%;
+.view {
+   width: 200px;
+   height: 200px;
+   margin: 10px;
+   float: left;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   cursor: default;
+   background: #fff url(../images/bgimg.jpg) no-repeat center center;
+}
+.view .mask,.view .content {
+   width: 200px;
+   height: 200px;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+}
+.view img {
+   display: block;
+   position: relative;
+}
+.view h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 17px;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 20px 0 0 0;
+}
+.view p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: rgba(115,186,55,.8);
+   color: #fff;
+   text-transform: uppercase;
+   margin-top: 80px;
+}
+.view a.info:hover {
+	background-color: #000 !important;
 }
 
-.grid a {
-	float: left;
-	max-width: 250px;
-	width: 25%;
-	color: #333;
-}
-
-.grid a:nth-child(odd) {
-	margin: -20px 0 -30px 0;
-}
-
-.grid figure {
-	position: relative;
-	overflow: hidden;
-	margin: 5px;
-	background: #333;
-}
-
-.grid figure img {
-	position: relative;
-	display: block;
-	width: 100%;
-	opacity: 0.7;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-}
-
-.grid figcaption {
-	position: absolute;
-	top: 0;
-	z-index: 11;
+.launch-title {
 	padding: 10px;
-	width: 100%;
-	height: 100%;
-	text-align: center;
 }
 
-.grid figcaption h2 {
-	margin: 0 0 20px 0;
-	color: #3498db;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 300;
-	font-size: 130%;
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
+.view-tenth img {
+   -webkit-transform: scaleY(1);
+   -moz-transform: scaleY(1);
+   -o-transform: scaleY(1);
+   -ms-transform: scaleY(1);
+   transform: scaleY(1);
+   -webkit-transition: all 0.7s ease-in-out;
+   -moz-transition: all 0.7s ease-in-out;
+   -o-transition: all 0.7s ease-in-out;
+   -ms-transition: all 0.7s ease-in-out;
+   transition: all 0.7s ease-in-out;
 }
-
-.grid figcaption p {
-	padding: 0 20px;
-	color: #aaa;
-	font-weight: 300;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
+.view-tenth h4 {
+   -webkit-transform: scaleY(1);
+   -moz-transform: scaleY(1);
+   -o-transform: scaleY(1);
+   -ms-transform: scaleY(1);
+   transform: scaleY(1);
+   -webkit-transition: all 0.7s ease-in-out;
+   -moz-transition: all 0.7s ease-in-out;
+   -o-transition: all 0.7s ease-in-out;
+   -ms-transition: all 0.7s ease-in-out;
+   transition: all 0.7s ease-in-out;
+   color: #73ba37;
+   height: 50px;
 }
-
-.grid figcaption h2,
-.grid figcaption p {
-	-webkit-transform: translateY(50px);
-	transform: translateY(50px);
+.view-tenth .mask {
+   background-color: rgba(255, 231, 179, 0.3);
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
 }
-
-.grid figure button {
-	position: absolute !important;
-	padding: 4px 20px !important;
-	border: none !important;
-	text-transform: uppercase !important;
-	letter-spacing: 1px !important;
-	font-weight: bold !important;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s !important;
-	transition: opacity 0.3s, transform 0.3s !important;
+.view-tenth h2 {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+   background: transparent;
+   margin: 20px 40px 0px 40px;
+   -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   color: #333;
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
 }
-
-.grid figcaption,
-.grid figcaption h2,
-.grid figcaption p,
-.grid figure button {
-	-webkit-backface-visibility: hidden !important;
-	backface-visibility: hidden !important;
+.view-tenth p {
+   color: #333;
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
 }
-
-/* Style for SVG */
-.grid svg {
-	position: absolute;
-	top: -1px; /* fixes rendering issue in FF */
-	z-index: 10;
-	width: 100%;
-	height: 100%;
+.view-tenth a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transform: scale(0);
+   -moz-transform: scale(0);
+   -o-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   -webkit-transition: all 0.5s linear;
+   -moz-transition: all 0.5s linear;
+   -o-transition: all 0.5s linear;
+   -ms-transition: all 0.5s linear;
+   transition: all 0.5s linear;
 }
-
-.grid svg path {
-	fill: #fff;
+.view-tenth:hover img, .view-tenth:hover h4 {
+   -webkit-transform: scale(10);
+   -moz-transform: scale(10);
+   -o-transform: scale(10);
+   -ms-transform: scale(10);
+   transform: scale(10);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
 }
-
-/* Hover effects */
-.grid a:hover figure img {
-	opacity: 1 !important;
+.view-tenth:hover .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
 }
-
-.grid a:hover figcaption h2,
-.grid a:hover figcaption p {
-	-webkit-transform: translateY(0) !important;
-	transform: translateY(0) !important;
-}
-
-.grid a:hover figcaption p {
-	opacity: 0 !important;
-}
-
-/* Individual styles */
-.demo-1 body {
-	background: #3498db;
-}
-
-.demo-1 .grid figure button{
-	top: 50%;
-	left: 50%;
-	border: 3px solid #fff !important;
-	background: transparent;
-	color: #fff;
-	opacity: 0;
-	-webkit-transform: translateY(-50%) translateX(-50%) scale(0.25);
-	transform: translateY(-50%) translateX(-50%) scale(0.25);
-}
-
-.demo-1 .grid a:hover figure button {
-	opacity: 1;
-	-webkit-transform: translateY(-50%) translateX(-50%) scale(1);
-	transform: translateY(-50%) translateX(-50%) scale(1);
-}
-
-/* Media Queries */
-/* Let's redefine the width of each anchor and the margins */
-
-@media screen and (max-width: 58em) {
-	.grid a {
-		width: 33.333%;
-	}
-
-	.grid a:nth-child(odd) {
-		margin: 0;
-	}
-
-	.grid a:nth-child(3n-1) {
-		margin: 30px 0 -30px 0;
-	}
-}
-
-@media screen and (max-width: 45em) {
-	.grid {
-		max-width: 500px;
-	}
-
-	.grid a {
-		width: 50%;
-	}
-
-	.grid a:nth-child(3n-1) {
-		margin: 0;
-	}
-
-	.grid a:nth-child(even) {
-		margin: 30px 0 -30px 0;
-	}
-
-
-	.grid figcaption h2 {
-		margin-bottom: 0px;
-		-webkit-transform: translateY(30px);
-		transform: translateY(30px);
-	}
-
-	.grid figcaption p {
-		margin: 0;
-		padding: 0 10px;
-	}
-}
-
-@media screen and (max-width: 27em) {
-	.grid {
-		max-width: 250px;
-	}
-
-	.grid a {
-		width: 100%;
-	}
-
-	.grid a:nth-child(even) {
-		margin: 0;
-	}
+.view-tenth:hover h2,.view-tenth:hover p,.view-tenth:hover a.info {
+   -webkit-transform: scale(1);
+   -moz-transform: scale(1);
+   -o-transform: scale(1);
+   -ms-transform: scale(1);
+   transform: scale(1);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
 }

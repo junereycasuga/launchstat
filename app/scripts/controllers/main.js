@@ -32,7 +32,7 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
   launch.fb = $firebase(new Firebase(firebaseUrl));
   launch.fb.$on('loaded', function(){
     init();
-    $.backstretch("../images/bg3.jpg");
+    $.backstretch("images/bg3.jpg");
     $('.site-header').addClass('animated fadeInDown');
       
     $('.site-header').show();
