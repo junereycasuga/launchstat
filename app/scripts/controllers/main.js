@@ -44,27 +44,26 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
 
   //add a launch
   launch.addLaunch = function(){
-    var add = launch.fb.$add({
-      title: launch.title,
-      launchDate: launch.date,
-      text: launch.text,
-      afterCountdown: launch.afterCountdown,
-      backgroundImage: launch.image
-    });
-
-    return true;
-
-  }
-
-  if(launch.addLaunch()){
-    $(function(){
-      var mainInner = $('#main .inner'),
-        modal = $('#modal');
-      modal.removeClass('modal-active').fadeOut(400, function(){
-        mainInner.animate({ opacity: 1 }, 400);
+      console.log(launch.title);
+    if((typeof launch.title != 'undefined') || (typeof launch.date != 'undefined') || (typeof launch.afterCountdown != 'undefined')){
+      var add = launch.fb.$add({
+        title: launch.title,
+        launchDate: launch.date,
+        text: launch.text,
+        afterCountdown: launch.afterCountdown,
+        backgroundImage: launch.image
       });
-    });
+
+      $(function(){
+        var mainInner = $('#main .inner'),
+            modal = $('#modal');
+        modal.removeClass('modal-active').fadeOut(400, function(){
+          mainInner.animate({ opacity: 1 }, 400);
+        });
+      });
+    }
   }
+
 
   $('#modal-open').on('click', function(e){
       var mainInner = $('#main .inner'),
