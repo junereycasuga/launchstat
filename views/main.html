@@ -29,7 +29,7 @@
       <h1 class="section-title">Add your LaunchStat Countdown</h1>
 
       <div class="row">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" name="addCountdownForm">
           <div class="form-group">
             <label class="col-sm-3 control-label">Title</label>
             <div class="col-sm-9">
@@ -64,7 +64,7 @@
             <div class="col-sm-3">&nbsp;</div>
             <div class="col-sm-9">
               <p class="form-submit">
-                <input type="submit" ng-click="launches.addLaunch()" id="newsletter_submit" value="Launch it!">
+                <input type="submit" ng-click="launches.addLaunch()" ng-disabled="addCountdownForm.$invalid" id="newsletter_submit" value="Launch it!">
               </p>
             </div>
           </div>
