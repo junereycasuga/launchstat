@@ -30,6 +30,7 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
   }
  
   launch.fb = $firebase(new Firebase(firebaseUrl));
+  console.log(launch.fb);
   launch.fb.$on('loaded', function(){
     init();
     $.backstretch("images/bg3.jpg", {fade: 'normal'});
@@ -44,9 +45,8 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
 
   //add a launch
   launch.addLaunch = function(){
-      console.log(launch.title);
     if((typeof launch.title != 'undefined') || (typeof launch.date != 'undefined') || (typeof launch.afterCountdown != 'undefined')){
-      var add = launch.fb.$add({
+      var add = launch.fb.launches.$add({
         title: launch.title,
         launchDate: launch.date,
         text: launch.text,
@@ -63,7 +63,6 @@ launchstat.controller('MainCtrl', function ($scope, $firebase, firebaseUrl) {
       });
     }
   }
-
 
   $('#modal-open').on('click', function(e){
       var mainInner = $('#main .inner'),
