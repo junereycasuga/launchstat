@@ -7,10 +7,7 @@
       <div class="modal-toggle">
         <a href="#" id="modal-open">Add your own countdown</a>
       </div>
-      <div>
-          <input type="text" ng-model="search" placeholder="Search" />
-      </div>
-      <div ng-repeat="(key, value) in launches.fb | orderByPriority | filter:search">
+      <div ng-repeat="(key, value) in launches.fb">
         <div class="view view-tenth">
           <div class="launch-title">
             <h4>{{ value.title }}</h4>
